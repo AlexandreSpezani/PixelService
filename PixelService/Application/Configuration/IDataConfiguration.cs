@@ -2,5 +2,5 @@
 
 public interface IDataConfiguration
 {
-    public string PngLocation { get; }
+    public string ImageLocation { get; }
 }

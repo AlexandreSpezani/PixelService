@@ -37,9 +37,11 @@ app.MapGet("/track", async (
 
         await kafkaService.Produce(trackInfo);
 
-        var image = File.ReadAllBytes(settings.Data.PngLocation);
+        var image = File.ReadAllBytes(settings.Data.ImageLocation);
 
-        return Results.File(image, fileDownloadName: "image.png");
+        var imageName = settings.Data.ImageLocation.Split("/").Last();
+
+        return Results.File(image, fileDownloadName: imageName);
     })
     .WithName("track")
     .WithOpenApi();
@@ -47,4 +49,6 @@ app.MapGet("/track", async (
 app.Run();
 
 // To tests references
-public partial class Program { }
+public partial class Program
+{
+}

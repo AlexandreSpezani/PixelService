@@ -10,7 +10,7 @@ RUN dotnet publish -c Release -o out
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 
 #DEFAULT IMAGE LOCATION
-ENV DATA__PNGLOCATION=wwwroot/image.png
+ENV DATA__IMAGELOCATION=wwwroot/image.gif
 
 WORKDIR /app
 COPY --from=build /app/out .

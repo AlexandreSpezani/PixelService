@@ -2,5 +2,5 @@
 
 public class DataConfiguration : IDataConfiguration
 {
-    public string PngLocation { get; set; } = null!;
+    public string ImageLocation { get; set; } = null!;
 }
